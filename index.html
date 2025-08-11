@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Design | Where Vision Meets Reality</title>
+    <link rel="icon" href="https://cdn.pixabay.com/animation/2023/08/14/08/23/08-23-41-778_512.gif" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #ffffff;
+            --accent: #ff4d5a;
+            --accent-light: #ff8e5a;
+            --dark-bg: #121212;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.18);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: var(--secondary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(255, 77, 90, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 142, 90, 0.1) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 4px 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            font-weight: 600;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ff4d5a, #ff8e5a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            color: #cbd5e1;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition);
+            gap: 10px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            background: var(--glass);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff4d5a, #ff8e5a);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .btn:hover::before {
+            transform: scaleX(1);
+        }
+
+        .btn-primary {
+            color: var(--secondary);
+        }
+
+        .btn-secondary {
+            color: var(--secondary);
+        }
+
+        /* Glass Cards */
+        .glass-card {
+            backdrop-filter: blur(10px);
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 77, 90, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 150px 0;
+            position: relative;
+        }
+
+        .section-header {
+            margin-bottom: 80px;
+            max-width: 800px;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100px;
+            height: 5px;
+            background: var(--accent);
+        }
+
+        .section-subtitle {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            max-width: 700px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 50px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--accent);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: var(--accent-light);
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .service-description {
+            color: #94a3b8;
+            line-height: 1.8;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 150px 0;
+            position: relative;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .portfolio-item {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            height: 400px;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+
+        .portfolio-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .portfolio-category {
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 100px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .stat-number {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--accent);
+            position: relative;
+        }
+
+        .stat-number::after {
+            content: '+';
+            position: absolute;
+            top: 0;
+            right: -20px;
+            font-size: 2rem;
+            color: var(--accent-light);
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 150px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            position: relative;
+            padding: 40px;
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .testimonial-content::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: -20px;
+            font-size: 5rem;
+            color: rgba(255, 77, 90, 0.2);
+            z-index: -1;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .client-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .client-role {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 150px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 60px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 15px 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--secondary);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 77, 90, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #ff4d5a, #ff8e5a);
+            color: var(--secondary);
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .submit-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff8e5a, #ff4d5a);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .submit-btn:hover::before {
+            opacity: 1;
+        }
+
+        /* Particles */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        /* Footer */
+        footer {
+            padding: 100px 0 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .footer-about {
+            max-width: 400px;
+            line-height: 1.8;
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-links a:hover::after {
+            width: 100%;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+                text-align: center;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero p {
+                font-size: 1.3rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#hero" style="display: flex; align-items: center; gap: 2px; font-size: 28px; font-weight: 800; letter-spacing: -1px; color: #fff; text-decoration: none;">
+                    <i class="fas fa-cube" style="color: #0099ff;"></i>
+                    <span style="color: #0fc92e;">NEX</span><span style="color: #fa6621;">US</span>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#footer">More</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate">Transform Your Vision Into Reality</h1>
+                <p class="animate">We create stunning digital experiences that captivate your audience and drive results. Our team of experts combines creativity with technology to deliver exceptional solutions.</p>
+                
+                <div class="hero-btns">
+                    <a href="#portfolio" class="btn btn-primary animate">
+                        <i class="fas fa-eye"></i> View Our Work
+                    </a>
+                    <a href="#contact" class="btn btn-secondary animate">
+                        <i class="fas fa-paper-plane"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate">Our Creative Services</h2>
+                <p class="section-subtitle animate">We offer a full range of design and development services to help your business succeed in the digital world.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">Creating intuitive and beautiful interfaces that enhance user experience and drive engagement.</p>
+                </div>
+                
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">Building responsive, high-performance websites and applications with the latest technologies.</p>
+                </div>
+                
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">App Development</h3>
+                    <p class="service-description">Designing and developing mobile applications for iOS and Android platforms.</p>
+                </div>
+                
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="service-title">Brand Identity</h3>
+                    <p class="service-description">Crafting memorable brand identities that resonate with your target audience.</p>
+                </div>
+                
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Digital Marketing</h3>
+                    <p class="service-description">Strategic marketing solutions to increase your online presence and drive growth.</p>
+                </div>
+                
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="service-title">Motion Graphics</h3>
+                    <p class="service-description">Creating engaging animations and video content that tells your brand story.</p>
+                </div>
+
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="service-title">Security Services</h3>
+                    <p class="service-description">Comprehensive security solutions to protect your digital assets.</p>
+                </div>
+
+                <div class="glass-card service-card animate">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="service-title">SEO Services</h3>
+                    <p class="service-description">Optimizing your website to rank higher in search engine results and attract more visitors.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate">Featured Projects</h2>
+                <p class="section-subtitle animate">Explore our latest work and see how we've helped businesses transform their digital presence.</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="glass-card portfolio-item animate">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Project" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-category">Security Protocol</div>
+                        <h3 class="portfolio-title">Security Services</h3>
+                        <a href="https://jahidads.github.io/CyberShield/" target="_blank" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="glass-card portfolio-item animate">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Project" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-category">Mobile App</div>
+                        <h3 class="portfolio-title">Fitness Tracker App</h3>
+                        <a href="https://jahidads.github.io/WorkHub/" target="_blank" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="glass-card portfolio-item animate">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Project" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-category">Brand Identity</div>
+                        <h3 class="portfolio-title">Coffee Brand Redesign</h3>
+                        <a href="https://jahidads.github.io/WorkHub/" target="_blank" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="glass-card portfolio-item animate">
+                    <img src="https://media.istockphoto.com/id/2210858896/photo/software-engineer-and-software-development-concepts-programming-for-various-devices-computer.jpg?s=612x612&w=0&k=20&c=yF34SUQYzavTcNmDQYyKXX9hglB70TT0c_ek5v6mSH8=" alt="Project" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-category">WordPress Development</div>
+                        <h3 class="portfolio-title">Portfolio Website</h3>
+                        <a href="https://jahidads.github.io/Portfolio/" target="_blank" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="glass-card portfolio-item animate">
+                    <img src="https://media.istockphoto.com/id/2186231934/photo/person-using-laptop-with-ai-content-generator-image-generator-documents-marketing-and.jpg?s=612x612&w=0&k=20&c=rhipyKxjJJYVVj7oYiN2mJPljB38k9VJGYAhaOCeoPI=" alt="Project" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-category">Business Development</div>
+                        <h3 class="portfolio-title">Business Growth Strategy</h3>
+                        <a href="https://jahidads.github.io/business-portfolio/" target="_blank" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+
+                <div class="glass-card portfolio-item animate">
+                    <img src="https://media.istockphoto.com/id/1427143523/photo/two-developer-computer-programmer-working-together-coding-on-laptop-computer-at-home-office.jpg?s=612x612&w=0&k=20&c=FZnEI978LTSC-x3oLuy_K4aj1c3TRbsNXqX4GZOo8OU=" alt="Project" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-category">Blog Website Design</div>
+                        <h3 class="portfolio-title">Web Blog Redesign</h3>
+                        <a href="https://jahidads.github.io/Blog/" target="_blank" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="glass-card stat-item animate">
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                
+                <div class="glass-card stat-item animate">
+                    <div class="stat-number">98</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                
+                <div class="glass-card stat-item animate">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                
+                <div class="glass-card stat-item animate">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate">Client Testimonials</h2>
+                <p class="section-subtitle animate">Don't just take our word for it. Here's what our clients have to say.</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="glass-card testimonial-card animate">
+                    <div class="testimonial-content">
+                        The team at NexusDesign transformed our outdated website into a modern, user-friendly platform that has significantly increased our conversion rates.
+                    </div>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="client-avatar">
+                        <div>
+                            <div class="client-name">Sarah Johnson</div>
+                            <div class="client-role">CEO, TechVision</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card testimonial-card animate">
+                    <div class="testimonial-content">
+                        Their attention to detail and creative approach helped us establish a strong brand identity that resonates with our target audience.
+                    </div>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="client-avatar">
+                        <div>
+                            <div class="client-name">Michael Chen</div>
+                            <div class="client-role">Marketing Director, InnovateCo</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card testimonial-card animate">
+                    <div class="testimonial-content">
+                        Working with NexusDesign was a game-changer for our business. Their mobile app has revolutionized how we engage with our customers.
+                    </div>
+                    <div class="client-info">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client" class="client-avatar">
+                        <div>
+                            <div class="client-name">Alex Rodriguez</div>
+                            <div class="client-role">Founder, FitLife</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card animate">
+                    <div class="testimonial-content">
+                        The team at GraphicsDesign was incredibly professional and attentive to our needs. They delivered a stunning website that truly represents our brand.
+                    </div>
+                    <div class="client-info">
+                        <img src="https://media.istockphoto.com/id/2165425195/photo/portrait-of-a-man-in-an-office.jpg?s=612x612&w=0&k=20&c=CoKXlahdZicUmnzglzCxmK1qo0qlrO6za2e9-Yjt8b4=" alt="Client" class="client-avatar">
+                        <div>
+                            <div class="client-name">Jobir Rahman</div>
+                            <div class="client-role">Graphics Designer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card animate">
+                    <div class="testimonial-content">
+                        The team at web design was incredibly professional and attentive to our needs. They delivered a stunning website that truly represents our brand.
+                    </div>
+                    <div class="client-info">
+                        <img src="https://media.istockphoto.com/id/2218333101/photo/confident-mature-man-smiling-in-professional-attire-with-a-calm-background.jpg?s=612x612&w=0&k=20&c=USO4FSo7wO-ETzZD7hCt0DDRuf36l9EjPzrET3geMxk=" alt="Client" class="client-avatar">
+                        <div>
+                            <div class="client-name">Albart Leo</div>
+                            <div class="client-role">Web Developer</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card testimonial-card animate">
+                    <div class="testimonial-content">
+                        Marketing is no longer just about selling products. It's about creating meaningful connections with customers and delivering value at every touchpoint.
+                    </div>
+                    <div class="client-info">
+                        <img src="https://media.istockphoto.com/id/2075555854/photo/portrait-of-a-beautiful-teenage-girl-outdoors.jpg?s=612x612&w=0&k=20&c=Q4vfC5dSWK7bYWMOS9EB--B9yqVqkB-tamwvPti7N7Q=" alt="Client" class="client-avatar">
+                        <div>
+                            <div class="client-name">Nora Smith</div>
+                            <div class="client-role">Marketing Director</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title animate">Let's Work Together</h2>
+                <p class="section-subtitle animate">Ready to start your project? Get in touch with us today.</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="glass-card animate">
+                    <h3 class="footer-title">Contact Information</h3>
+                    <div class="footer-about">
+                        <p>We'd love to hear about your project and how we can help you achieve your goals.</p>
+                        <p>Feel free to reach out to us through any of the channels below:</p>
+                        <div style="margin-top: 30px;">
+                            <p><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</p>
+                            <p><i class="fas fa-phone"></i> +(880) 130-8839-759</p>
+                            <p><i class="fas fa-envelope"></i> support@nexus.com</p>
+                            <p><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 6:00 PM</p>
+                            <p><i class="fas fa-globe"></i> www.nexus.com</p>
+                        </div>
+                        <p style="margin-top: 20px; color: #94a3b8;">Follow us on social media for the latest updates and insights.</p>
+                    </div>
+                    <div class="social-links" style="margin-top: 30px;">
+                        <a href="https://www.facebook.com/jahidads1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/jahidhasan_tw"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/jahidhasan2.0ff/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://bd.linkedin.com/in/jahidads"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                    <button id="copy-contact-info" class="btn btn-primary" style="margin-top: 20px;">Copy info</button>
+                    <script>
+                        // Copy contact info to clipboard
+                        document.getElementById('copy-contact-info').addEventListener('click', function() {
+                            const contactInfo = `Dhaka, Bangladesh\n+(880) 130-8839-759\nsupport@nexus.com\nMon - Fri: 9:00 AM - 6:00 PM\nwww.nexus.com`;
+                            navigator.clipboard.writeText(contactInfo).then(function() {
+                                alert('Contact information copied to clipboard!');
+                            }, function(err) {
+                                console.error('Could not copy text: ', err);
+                            });
+                        });
+                    </script>
+                </div>
+                
+                <div class="glass-card animate">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                        <div id="contact-form-message" style="margin-top:10px; color:#ff8e5a; font-size:0.95rem;"></div>
+                        <script>
+                            // Thanks message on submit
+                            document.querySelector('.contact-form').addEventListener('submit', function(e) {
+                                e.preventDefault();
+                                document.getElementById('contact-form-message').textContent = "Thank you for contacting us! We'll get back to you soon.";
+                                document.getElementById('contact-form-message').style.color = "#0fc92e";
+                                this.reset();
+                            });
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div id="footer" class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">NexusDesign</div>
+                    <p class="footer-about">Transforming visions into digital realities through innovative design and cutting-edge technology.</p>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://jahidads.github.io/Cyber-Security/" target="_blank">Cyber Security</a></li>
+                        <li><a href="https://jahidads.github.io/CyberShield/" target="_blank">CyberShield</a></li>
+                        <li><a href="https://jahidads.github.io/Portfolio/" target="_blank">Portfolio</a></li>
+                        <li><a href="https://jahidads.github.io/Webinars/" target="_blank">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://jahidads.github.io/WorkHub/" target="_blank">UI/UX Design</a></li>
+                        <li><a href="https://jahidads.github.io/Web-Developer/" target="_blank">Web Development</a></li>
+                        <li><a href="https://jahidads.github.io/WorkHub/" target="_blank">App Development</a></li>
+                        <li><a href="https://jahidads.github.io/WorkHub/" target="_blank">Brand Identity</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="footer-title">Newsletter</h3>
+                    <div class="footer-about">
+                        <p>Subscribe to our newsletter for design tips and industry insights.</p>
+                        <div class="form-group" style="margin-top: 20px;">
+                            <input type="email" placeholder="Your email address" style="width: 100%;">
+                            <button type="button" class="submit-btn" style="width: 100%; margin-top: 15px;" onclick="subscribeNewsletter()">Subscribe</button>
+                            <div id="newsletter-message" style="margin-top:10px; color:#ff8e5a; font-size:0.95rem;"></div>
+                            <script>
+                                function subscribeNewsletter() {
+                                    const input = event.target.parentElement.querySelector('input[type="email"]');
+                                    const messageDiv = document.getElementById('newsletter-message');
+                                    if (!input.value) {
+                                        messageDiv.textContent = "Please enter your email address.";
+                                        messageDiv.style.color = "#ff4d5a";
+                                        return;
+                                    }
+                                    // Simple email validation
+                                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                                    if (!emailPattern.test(input.value)) {
+                                        messageDiv.textContent = "Please enter a valid email address.";
+                                        messageDiv.style.color = "#ff4d5a";
+                                        return;
+                                    }
+                                    messageDiv.textContent = "Thank you for subscribing!";
+                                    messageDiv.style.color = "#0fc92e";
+                                    input.value = "";
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2025 NexusDesign. Design By 💎Jahid Hasan.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#ff4d5a'
+                },
+                shape: {
+                    type: 'circle',
+                    stroke: {
+                        width: 0,
+                        color: '#000000'
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ff8e5a',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'grab'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 140,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.animate').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Add floating animation to service icons
+            const serviceIcons = document.querySelectorAll('.service-icon');
+            serviceIcons.forEach(icon => {
+                icon.style.animation = `float 6s ease-in-out infinite`;
+                icon.style.animationDelay = `${Math.random() * 2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
